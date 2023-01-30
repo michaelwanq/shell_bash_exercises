@@ -1,4 +1,5 @@
 #!/bin/bash
+# 将用户输入的日期格式进行标准格式化示例
 monthNumToName()
 {
  # Sets the variable 'month' to the appropriate value.
