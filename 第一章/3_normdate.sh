@@ -37,6 +37,10 @@ monthNumToName()
 #   INCLUDE THIS IN OTHER SCRIPTS.
 # =================
 # Input validation
+# 将用户输入的**-**-****或者**/**/****转化为** ** ****的标准输入格式
+if [ $# -eq 1 ] ; then
+   set -- $(echo $1 | sed 's/[\/\-]/ /g')
+fi
 if [ $# -ne 3 ] ; then
   echo "Usage: $0 month day year" >&2
   echo "Formats are August 3 1962 and 8 3 1962" >&2
@@ -50,7 +54,7 @@ fi
 if [ -z $(echo $1|sed 's/[[:digit:]]//g')  ]; then
   monthNumToName $1
 else
-  Normalize to first three letters, first upper-, rest lowercase.
+# Normalize to first three letters, first upper-, rest lowercase.
   month="$(echo $1|cut -c1|tr '[:lower:]' '[:upper:]')"
   month="$month$(echo $1|cut -c2-3 | tr '[:upper:]' '[:lower:]')"
 fi
