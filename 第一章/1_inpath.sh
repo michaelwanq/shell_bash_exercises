@@ -1,5 +1,5 @@
 #!/bin/bash
-# inpath -- 验证指定程序是否有效，或者能否在PATH目录列表中找到。
+# inpath -- 验证指定程序是否可执行，能否在PATH目录列表中找到。
 
 in_path()
 ## 定义函数in_path
